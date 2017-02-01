@@ -31,17 +31,18 @@ public class Juggler implements Performer {
         new ClassPathXmlApplicationContext("com/shijin/learn/springidol/spring-idol.xml");
 
     try{
-      Stage theStage = (Stage) ctx.getBean("theStage");
-      theStage.open();
+//      Stage theStage = (Stage) ctx.getBean("theStage");
+//      theStage.open();
       
       Performer performer = (Performer) ctx.getBean("poeticDuke");
       performer.perform();     
       
-      theStage.close();
+//      theStage.close();
     }catch(Exception e){
       logger.error(e.getMessage());
     }
 
+    
     logger.info("main end.");
 
   }

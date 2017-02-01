@@ -16,6 +16,10 @@
 	</bean>
 
 	<bean id="theStage" class="com.shijin.learn.springidol.Stage"
-		factory-method="getInstance" />
+		factory-method="getInstance" init-method="open" destroy-method="close"/>
+
+	<bean id="auditorium" class="com.shijin.learn.springidol.Auditorium"
+		init-method="turnOnLights" destroy-method="turnOffLights" />
+
 
 </beans>
