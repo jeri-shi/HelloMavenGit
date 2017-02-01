@@ -4,6 +4,9 @@
     xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-	<bean id="duke" class="com.shijin.learn.springidol.Juggler"/>
+	<bean id="duke" class="com.shijin.learn.springidol.Juggler">
+		<constructor-arg value="15"/>
+	</bean>
+	
 
 </beans>
