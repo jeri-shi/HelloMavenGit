@@ -15,4 +15,7 @@
 		<constructor-arg ref="sonnet29" />
 	</bean>
 
+	<bean id="theStage" class="com.shijin.learn.springidol.Stage"
+		factory-method="getInstance" />
+
 </beans>
