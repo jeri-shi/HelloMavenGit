@@ -34,8 +34,11 @@ public class Juggler implements Performer {
 //      Stage theStage = (Stage) ctx.getBean("theStage");
 //      theStage.open();
       
-      Performer performer = (Performer) ctx.getBean("poeticDuke");
-      performer.perform();     
+      Performer performer = (Performer) ctx.getBean("hank");
+      performer.perform();
+      
+//      performer = (Performer) ctx.getBean("tom");
+//      performer.perform();
       
 //      theStage.close();
     }catch(Exception e){
