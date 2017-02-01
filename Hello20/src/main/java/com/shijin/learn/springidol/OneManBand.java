@@ -1,10 +1,10 @@
 package com.shijin.learn.springidol;
 
-import java.util.Map;
+import java.util.Properties;
 
 public class OneManBand implements Performer {
 
-  private Map<String, Instrument> instruments;
+  private Properties instruments;
 
   public OneManBand() {
 
@@ -12,17 +12,16 @@ public class OneManBand implements Performer {
 
   @Override
   public void perform() throws PerformanceException {
-    for(String key : instruments.keySet()) {
+    for(Object key : instruments.keySet()) {
       System.out.print(key + " : ");
-      Instrument instrument = instruments.get(key);
-      instrument.play();
+      System.out.println(instruments.get(key));
     }
 //    for (Instrument instrument : instruments) {
 //      instrument.play();
 //    }
   }
 
-  public void setInstruments(Map<String, Instrument> instruments) {
+  public void setInstruments(Properties instruments) {
     this.instruments = instruments;
   }
 
