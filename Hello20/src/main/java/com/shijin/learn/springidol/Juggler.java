@@ -31,7 +31,7 @@ public class Juggler implements Performer {
         new ClassPathXmlApplicationContext("com/shijin/learn/springidol/spring-idol.xml");
 
     try{
-      Performer performer = (Performer) ctx.getBean("duke");
+      Performer performer = (Performer) ctx.getBean("poeticDuke");
       performer.perform();     
     }catch(Exception e){
       logger.error(e.getMessage());
