@@ -47,5 +47,10 @@
 		</property>
 	</bean>
 	
+	<bean id="carl" class="com.shijin.learn.springidol.Instrumentalist">
+		<property name="song" value="#{kenny.song.toUpperCase()}" />
+		<property name="instrument" ref="piano" />
+	</bean>
+	
 
 </beans>
