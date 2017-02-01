@@ -39,11 +39,11 @@
 	
 	<bean id="hank" class="com.shijin.learn.springidol.OneManBand">
 		<property name="instruments">
-			<list>
-				<ref bean="guitar" />
-				<ref bean="cymbal" />
-				<ref bean="harmonica" />
-			</list>
+			<map>
+				<entry key="GUITAR" value-ref="guitar" />
+				<entry key="CYMBAL" value-ref="cymbal" />
+				<entry key="HARMONICA" value-ref="harmonica" />
+			</map>
 		</property>
 	</bean>
 	
