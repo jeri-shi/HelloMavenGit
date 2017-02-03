@@ -1,5 +1,8 @@
 package com.shijin.learn.springidol;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Piano implements Instrument {
 
   @Override
