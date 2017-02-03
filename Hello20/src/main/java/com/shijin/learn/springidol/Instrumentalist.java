@@ -1,6 +1,6 @@
 package com.shijin.learn.springidol;
 
-public class Instrumentalist implements Performer {
+public class Instrumentalist implements Instrumentalists {
   private String song;
   private Instrument instrument;
 
@@ -15,18 +15,22 @@ public class Instrumentalist implements Performer {
 
   }
 
+  @Override
   public String getSong() {
     return song;
   }
 
+  @Override
   public void setSong(String song) {
     this.song = song;
   }
 
+  @Override
   public Instrument getInstrument() {
     return instrument;
   }
 
+  @Override
   public void setInstrument(Instrument instrument) {
     this.instrument = instrument;
   }
