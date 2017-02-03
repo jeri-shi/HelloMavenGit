@@ -1,15 +1,25 @@
 package com.shijin.learn.aop;
 
+import java.util.ArrayList;
+import java.util.Collection;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
-import org.springframework.context.annotation.Scope;
 
 import com.shijin.learn.springidol.Audience;
+import com.shijin.learn.springidol.Cymbal;
+import com.shijin.learn.springidol.Guitar;
+import com.shijin.learn.springidol.Harmonica;
+import com.shijin.learn.springidol.Instrument;
 import com.shijin.learn.springidol.Instrumentalist;
 import com.shijin.learn.springidol.Instrumentalists;
+import com.shijin.learn.springidol.OneManBand;
+import com.shijin.learn.springidol.Performer;
 import com.shijin.learn.springidol.Piano;
+import com.shijin.learn.springidol.PoeticJuggler;
+import com.shijin.learn.springidol.Sonnet29;
 
 @Configuration
 @EnableAspectJAutoProxy
@@ -44,9 +54,40 @@ public class AppConfig {
   }
   
   @Bean
-  @Scope("prototype")
-  public Instrumentalists instrumentalist() {
-    return new Instrumentalist();
+  public Performer juggler() {
+    return new PoeticJuggler(new Sonnet29());
+  }
+
+  @Bean
+  public Guitar guitar() {
+    return new Guitar();
   }
   
+  @Bean
+  public Cymbal cymbal() {
+    return new Cymbal();
+  }
+  
+  @Bean
+  public Harmonica harmonica() {
+    return new Harmonica();
+  }
+  
+  @Bean
+  public Collection<Instrument> instruments() {
+    Collection<Instrument> list = new ArrayList<Instrument>();
+    list.add(guitar());
+    list.add(cymbal());
+    list.add(harmonica());
+    list.add(piano());
+    return list;
+  }
+  
+  @Bean
+  public Performer kate() {
+    OneManBand kate = new OneManBand();
+    kate.setInstruments(instruments());
+    return kate;
+  }
+
 }

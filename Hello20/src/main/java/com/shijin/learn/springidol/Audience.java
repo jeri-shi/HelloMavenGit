@@ -1,7 +1,9 @@
 package com.shijin.learn.springidol;
 
+import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.AfterThrowing;
+import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
@@ -35,7 +37,7 @@ public class Audience {
     System.out.println("Boo! We want our money back!");
   }
 
-/*  @Pointcut("execution(* com.shijin.learn.springidol.Performer.perform(..))")
+  @Pointcut("execution(* com.shijin.learn.springidol.Performer.perform(..))")
   public void perform() {
     
   }
@@ -53,5 +55,6 @@ public class Audience {
     } catch (Throwable t) {
       System.out.println("Boo! want our money back!!!");
     }
-  }*/
+  }
+  
 }

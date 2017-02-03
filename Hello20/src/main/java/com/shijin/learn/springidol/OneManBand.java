@@ -1,10 +1,10 @@
 package com.shijin.learn.springidol;
 
-import java.util.Properties;
+import java.util.Collection;
 
 public class OneManBand implements Performer {
 
-  private Properties instruments;
+  private Collection<Instrument> instruments;
 
   public OneManBand() {
 
@@ -12,16 +12,16 @@ public class OneManBand implements Performer {
 
   @Override
   public void perform() throws PerformanceException {
-    for(Object key : instruments.keySet()) {
-      System.out.print(key + " : ");
-      System.out.println(instruments.get(key));
-    }
-//    for (Instrument instrument : instruments) {
-//      instrument.play();
+//    for(Object key : instruments.keySet()) {
+//      System.out.print(key + " : ");
+//      System.out.println(instruments.get(key));
 //    }
+    for (Instrument instrument : instruments) {
+      instrument.play();
+    }
   }
 
-  public void setInstruments(Properties instruments) {
+  public void setInstruments(Collection<Instrument> instruments) {
     this.instruments = instruments;
   }
 
