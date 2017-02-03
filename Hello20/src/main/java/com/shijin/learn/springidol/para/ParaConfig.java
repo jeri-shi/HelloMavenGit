@@ -12,6 +12,11 @@ public class ParaConfig {
   }
   
   @Bean
+  public ContestantIntroducer introducer() {
+    return new ContestantIntroducer();
+  }
+  
+  @Bean
   public Volunteer volunteer() {
     return new Volunteer();
   }
