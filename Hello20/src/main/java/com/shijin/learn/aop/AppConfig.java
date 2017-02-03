@@ -7,6 +7,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
+import org.springframework.context.annotation.Import;
 
 import com.shijin.learn.springidol.Audience;
 import com.shijin.learn.springidol.Cymbal;
@@ -20,10 +21,12 @@ import com.shijin.learn.springidol.Performer;
 import com.shijin.learn.springidol.Piano;
 import com.shijin.learn.springidol.PoeticJuggler;
 import com.shijin.learn.springidol.Sonnet29;
+import com.shijin.learn.springidol.para.ParaConfig;
 
 @Configuration
 @EnableAspectJAutoProxy
 @ComponentScan(basePackages="com.shijin.learn.springidol")
+@Import(ParaConfig.class)
 public class AppConfig {
 //  private static final Logger logger = LogManager.getLogger(AppConfig.class);
   

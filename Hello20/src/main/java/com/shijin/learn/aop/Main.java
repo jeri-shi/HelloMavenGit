@@ -7,13 +7,34 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 import com.shijin.learn.springidol.Instrumentalists;
 import com.shijin.learn.springidol.Performer;
+import com.shijin.learn.springidol.para.MindReader;
+import com.shijin.learn.springidol.para.Thinker;
 
 public class Main {
   private static final Logger logger = LogManager.getLogger(Main.class);
+  private static ApplicationContext ctx = new AnnotationConfigApplicationContext(AppConfig.class);
   public static void main(String[] args) {
+    scenario2();
+
+  }
+  
+  public static void scenario2() {
+    MindReader magician = (MindReader) ctx.getBean("magician");
+    Thinker volunteer = (Thinker) ctx.getBean("volunteer");
     
-    @SuppressWarnings("resource")
-    ApplicationContext ctx = new AnnotationConfigApplicationContext(AppConfig.class);
+    logger.info("volunteer start thinking...");
+    volunteer.thinkOfSomething("I am happy now!");
+    System.out.println("magician said: the thought is " + magician.getThoughts());
+    System.out.println("voluneer said: the thought was " + volunteer.getThoughts());
+    
+    logger.info("volunteer start thinking again...");
+    volunteer.thinkOfSomething("I am curious now!!!");
+    System.out.println("magician said: the thought is " + magician.getThoughts());
+    System.out.println("voluneer said: the thought was " + volunteer.getThoughts());
+    
+  }
+  
+  public static void scenario1() {
     Instrumentalists kenny = (Instrumentalists) ctx.getBean("kenny");
     Instrumentalists carl = (Instrumentalists) ctx.getBean("carl");
     Performer juggler = (Performer) ctx.getBean("juggler");
